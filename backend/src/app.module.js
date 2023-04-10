@@ -1,6 +1,6 @@
 import express, {json} from "express";
 import cors from "cors";
-import book from "./book/book.module.js"
+import { book } from "./book/book.module.js"
 import "dotenv/config.js";
 
 

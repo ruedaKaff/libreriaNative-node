@@ -1,10 +1,23 @@
 import { Router } from "express";
-const book = Router();
+
 import {find, create, remove } from "./book.service.js";
+const book = Router();
 
 book.get(
     "/",
     find
 );
 
-book.create
+book.post(
+    "/", 
+    create
+);
+
+book.delete(
+    "/:id_book",
+    remove
+);
+
+export {
+    book
+}
