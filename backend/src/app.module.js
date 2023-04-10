@@ -9,7 +9,7 @@ const app = express();
 app
     .use(cors())
     .use(json())
-    .use("/books", book);
+    .use("/book", book);
 
 export {
     app

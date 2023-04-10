@@ -27,8 +27,7 @@ const create = (req , res = response ) => {
         `
         INSERT INTO libro (id_Author, id_Publisher, title_book, genre_book, price_book)
         VALUES (?,?,?,?,?)
-        `
-        ,[id_Author, id_Publisher, tittle_book, genre_book, price_book],
+        `,[id_Author, id_Publisher, tittle_book, genre_book, price_book],
         function (err, result, fields) {
             err ? res.json(err) : res.json(result);
         }
@@ -38,16 +37,18 @@ const create = (req , res = response ) => {
 
 const remove = (req, res = response) => {
 
+    const { id_book }= req.params
     connection.query (
         `
         DELETE FROM libro 
         Where id_book = ?
         `
-        ,[req.params.id_book],
+        ,[id_book],
         function(err, result, fields) {
             err ? res.json(err): res.json(result);
         }
     );
+    console.log(id_book);
 };
 
 export { find,create,remove };
