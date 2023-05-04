@@ -37,6 +37,7 @@ return (
       data={libros}
       renderItem={({ item }) => (<Text>{item.title_book}</Text>)}
     
+      
       keyExtractor={item => item.id_book}
   />
 
