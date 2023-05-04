@@ -5,7 +5,7 @@ import "dotenv/config.js"
 const find = (req, res = response) => {
     connection.query(
         `
-        select libro.title_book, autor.name_author, publisher.name_publisher, libro.genre_book, libro.price_book
+        select libro.id_book, libro.title_book, autor.name_author, publisher.name_publisher, libro.genre_book, libro.price_book
         from libro
         Inner join autor on libro.id_Author = autor.id_author
         Inner join publisher on libro.id_Publisher = publisher.id_publisher;
