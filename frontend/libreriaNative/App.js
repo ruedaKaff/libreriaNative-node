@@ -21,13 +21,23 @@ const styles = StyleSheet.create({
  */
 
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
 import ListaLibros from './components/bookList.js';
 
 const PantallaPrincipal = () => {
   return (
     <View style={styles.container}>
+      <Header style="font-size: 100px"/>
+      
       <ListaLibros/>
+    </View>
+  );
+};
+
+const Header = () => {
+  return(
+    <View>
+    <Text>Book Store</Text>
     </View>
   );
 };
@@ -35,10 +45,11 @@ const PantallaPrincipal = () => {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 350,
-    flex: 1,
-    backgroundColor:'orange',
+    flex: 5,
+    backgroundColor:'white',
     alignItems: 'center',
     justifyContent: 'center',
+    fontSize:50
   },
 });
 
