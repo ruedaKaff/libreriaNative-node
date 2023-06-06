@@ -21,36 +21,40 @@ const styles = StyleSheet.create({
  */
 
 import React from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import ListaLibros from './components/bookList.js';
 
-const PantallaPrincipal = () => {
+const BookStore = () => {
   return (
     <View style={styles.container}>
-      <Header style="font-size: 100px"/>
-      
+      <View style={styles.Header}></View>
+      <Text style={styles.headerText}>Book Store</Text>
       <ListaLibros/>
     </View>
   );
 };
 
-const Header = () => {
-  return(
-    <View>
-    <Text>Book Store</Text>
-    </View>
-  );
-};
+
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 350,
-    flex: 5,
+    padding: 16,
+    flex: 1,
     backgroundColor:'orange',
     alignItems: 'center',
     justifyContent: 'center',
     fontSize:50
   },
+  Header: {
+    flexDirection: "row",
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom:16,
+  },
+  headerText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
 });
 
-export default PantallaPrincipal;
+export default BookStore;
